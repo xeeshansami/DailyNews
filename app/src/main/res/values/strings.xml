@@ -1,0 +1,158 @@
+<resources>
+    <string name="app_name">BharatShorts</string>
+
+    <!--  Google cloud key  -->
+    <string name="google_maps_key">AIzaSyB4DunOLzliLkj_UHjZkwLcUwjmLhYDLjM</string>
+
+    <!-- Google ads application ID -->
+    <string name="ads_application_id">ca-app-pub-3422922123561518~4219878663</string>
+
+    <!-- Common messages -->
+    <string name="no_internet">No Internet Connection</string>
+    <string name="progress_bar_text">Please Wait...</string>
+    <string name="no_news_found">No News Found Under this Category!</string>
+    <string name="pick_image_intent_text">Select Your Image:</string>
+    <string name="splash_screen_message">స్థానిక వార్తలకు ఉత్తమ అనువర్తనం</string>
+    <string name="confirmation">Confirmation</string>
+
+    <!--   Tour screen List  -->
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="start">Start</string>
+    <string name="select_state">Select State</string>
+
+    <!--   Categories List  -->
+    <string name="search_hint">Search Districts</string>
+    <string name="reporter_posts">Reporter Posts List</string>
+    <string name="reporter_favorites">Reporter Favorites List</string>
+    <string name="post_news">Post News</string>
+
+    <!-- Home -->
+    <string name="home">Home</string>
+    <string name="trending">Trending</string>
+    <string name="post">Post</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="play_win">Play &amp; Win</string>
+
+    <!-- Profile  -->
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="unfollow">UnFollow</string>
+    <string name="favourites">Favourites</string>
+    <string name="recent_posts">Recent Posts</string>
+    <string name="view_all">View All</string>
+    <string name="no_recent_posts">No Recent Posts Available!</string>
+    <string name="no_favourites">No Favourites Found!</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
+    <string name="verify">Verify</string>
+    <string name="delete_post">Are you sure you want to Delete?</string>
+    <string name="delete_favorite">Are you sure you want to Un-Favorite?</string>
+    <string name="pending">Pending</string>
+    <string name="published">Published</string>
+    <string name="rejected">Rejected</string>
+    <string name="hold">Hold</string>
+    <string name="status">Status:</string>
+    <string name="edit">Edit</string>
+    <string name="no_following">No Following List Found!</string>
+    <string name="no_followers">No Followers List Found!</string>
+
+    <!-- Edit profile  -->
+    <string name="full_name">Full Name</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="email">Email</string>
+    <string name="district">District</string>
+
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="or">Or</string>
+    <string name="enter_phone_number">Please enter mobile number to continue our Application</string>
+    <string name="agree_terms_conditions">I Agree Terms &amp; Conditions</string>
+    <string name="login_message">Using our App, Please Register with Your 10 digits Mobile Number and Accept Terms &amp; Conditions in Profile page.For more details about our App, Please check settings.</string>
+
+    <!-- Verification code -->
+    <string name="verification_code">Verification Code</string>
+    <string name="otp_message">OTP has been sent to your mobile number</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="wrong_otp">Verification Code is Wrong</string>
+    <string name="seconds_remaining">Seconds Remaining: </string>
+    <string name="resend_otp_clicked">OTP has been sent</string>
+
+    <!-- Post news -->
+    <string name="news_title">News Title</string>
+    <string name="news_content">News Content</string>
+    <string name="upload_video">Upload Video</string>
+    <string name="youtube_link">Youtube Link</string>
+    <string name="paste_youtube_link">Paste or Type Youtube Link Here</string>
+    <string name="enter_text">Enter Text Here..</string>
+    <string name="add_more">Min.300 chars</string>
+    <string name="add_more_title">Min.35 chars</string>
+    <string name="enter_category">Enter Category</string>
+    <string name="news_post">Are You Sure You Want to Submit?</string>
+    <string name="submit">Submit</string>
+    <string name="post_news_with_image">Post News with Image</string>
+    <string name="post_news_with_video">Post News with Video</string>
+    <string name="post_news_with_social_links">Post News with Youtube Links</string>
+    <string name="post_news_dialog_content">Please select at least one option from above menu to proceed further process</string>
+    <string name="news_reporter_1">1.వార్తల్లో ప్రస్తావించే విషయం, ఫోటో, వీడియోల్లో వాస్తవాలు పరిశీలించుకున్నాకే పంపండి </string>
+    <string name="news_reporter_2">2.బ్లర్/తక్కువ నాణ్యత గల ఫోటోలు కాకుండా మంచి పిక్సల్స్ ఉన్నవి పంపండి </string>
+    <string name="news_reporter_3">3.హెడ్లైన్ సంక్లిప్తంగా, వివరణ స్పష్టంగా ఉండేలా చూసుకోండి. ఎప్పుడు, ఎక్కడ, ఎవరు, ఎందుకు, ఏమిటి, ఎలా అనే అంశాలకు సమాధానాలు ఉంటె వార్తల్లో స్పష్టత ఉంటుంది </string>
+    <string name="news_reporter_4">4.గమనిక: మీరు వార్తల్లో పేర్కొన్న విషయాలు అన్నింటికీ మీరే పూర్తి బాధ్యులు </string>
+    <!-- News item  -->
+    <string name="read_more">Read More</string>
+
+    <!-- News details -->
+    <string name="follow">Follow</string>
+    <string name="download">Download</string>
+    <string name="share_app_name3">వార్తలను చదవడమే కాదు వినొచ్చు కూడా\nప్రాంతీయ వార్తలకు మరింత చేరువవ్వండి</string>
+    <string name="share_app_name4">వార్తలను చదవడమే కాదు వినొచ్చు కూడా\n\nప్రాంతీయ వార్తలకు మరింత చేరువవ్వండి</string>
+    <string name="share_app_name">వార్తలను చదవడమే కాదు వినొచ్చు కూడా</string>
+    <string name="share_app_name1">ప్రాంతీయ వార్తలకు మరింత చేరువవ్వండి</string>
+
+    <!--  Comments -->
+    <string name="write_comments">Write Comments Here</string>
+    <string name="comments">Comments</string>
+    <string name="reply">Reply</string>
+
+    <!-- Settings -->
+    <string name="notifications">Notifications</string>
+    <string name="change_theme">Change Theme</string>
+    <string name="change_district">Change District</string>
+    <string name="videos_auto_play">Videos Autoplay</string>
+    <string name="share_app">Share App</string>
+    <string name="rate_app">Rate App</string>
+    <string name="about_us">About Us</string>
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+    <string name="privacy_policy">Privacy &amp; Policies</string>
+    <string name="help_support">Help &amp; Support</string>
+    <string name="logout">Logout</string>
+    <string name="unable_to_find_app">Unable to find market app</string>
+    <string name="mail">Email</string>
+    <string name="subject">Subject</string>
+    <string name="description">Description</string>
+
+    <!--   Validation messages  -->
+    <string name="mobile_validation">Please enter valid 10 digits mobile number</string>
+    <string name="field_empty">Fields should not be empty</string>
+    <string name="news_title_length">News title length should be min 35 chars</string>
+    <string name="news_description_length">News description length should be min 300 chars</string>
+    <string name="image_required">Please upload image</string>
+    <string name="video_required">Please upload video</string>
+    <string name="youtube_link_required">Please type or paste youtube link </string>
+    <string name="required_terms_conds">Please accept terms and conditions</string>
+    <string name="no_trending_news">Trending news not found!</string>
+    <string name="mail_required">Please enter Email </string>
+    <string name="subject_required">Please enter subject </string>
+    <string name="desc_required">Please enter description </string>
+
+    <!--  Logout -->
+    <string name="log_out">Log Out</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logout_confirmation">Are you sure you want to Logout?</string>
+
+</resources>

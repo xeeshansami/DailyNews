@@ -1,0 +1,2 @@
+include ':app',':cropper',':nativetemplates'
+rootProject.name = "DailySmartNews"

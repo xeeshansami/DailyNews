@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Fragments.ProfileFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_5"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:elevation="@dimen/margin_5"
+        app:cardCornerRadius="@dimen/margin_5"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appColor"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_15"
+            android:paddingEnd="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_60">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_for_image"
+                android:layout_width="@dimen/margin_100"
+                android:layout_height="@dimen/margin_100"
+                app:cardCornerRadius="@dimen/margin_5">
+
+                <ImageView
+                    android:id="@+id/ivProfileImage"
+                    android:src="@drawable/defult_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_10"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivEditProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:src="@drawable/edit" />
+
+                <TextView
+                    android:id="@+id/txtProfileName"
+                    style="@style/RegularCondensed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="-8dp"
+                    android:maxLines="1"
+                    android:text="Name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/txtProfileDistrict"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-5dp"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="-8dp"
+                    android:maxLines="1"
+                    android:text="District"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_15" />
+
+                <TextView
+                    style="@style/RegularCondensed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:gravity="end"
+                    android:text="4.5 / 5"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_12"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_25"
+        android:layout_marginTop="@dimen/margin_minus_50"
+        android:layout_marginEnd="@dimen/margin_30"
+        android:background="@color/white"
+        android:elevation="@dimen/margin_5"
+        app:cardCornerRadius="@dimen/margin_10"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/mobile_number"
+                    android:textColor="@color/appColor"
+                    android:textSize="@dimen/text_12" />
+
+                <TextView
+                    android:id="@+id/txtProfileMobileNumber"
+                    style="@style/Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:gravity="center"
+                    android:textColor="@color/appColor"
+                    android:textSize="@dimen/text_15" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/email"
+                    android:textColor="@color/appColor"
+                    android:textSize="@dimen/text_12" />
+
+                <TextView
+                    android:id="@+id/txtProfileEmail"
+                    style="@style/Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/appColor"
+                    android:textSize="@dimen/text_15" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/layoutProfileFavourites"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/favourites"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_12" />
+
+            <ImageView
+                android:layout_width="@dimen/margin_30"
+                android:layout_height="@dimen/margin_30"
+                android:layout_gravity="center"
+                android:src="@drawable/favorite_filled_blue" />
+
+            <TextView
+                android:id="@+id/txtFavCount"
+                style="@style/RegularCondensed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="0"
+                android:textAllCaps="true"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_14" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/margin_1"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey_transparent" />
+
+        <LinearLayout
+            android:id="@+id/layoutProfileFollowers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/followers"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_12" />
+
+            <ImageView
+                android:layout_width="@dimen/margin_30"
+                android:layout_height="@dimen/margin_30"
+                android:layout_gravity="center"
+                android:src="@drawable/followers" />
+
+            <TextView
+                android:id="@+id/txtFollowersCount"
+                style="@style/RegularCondensed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="0"
+                android:textAllCaps="true"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_14" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/margin_1"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey_transparent" />
+
+        <LinearLayout
+            android:id="@+id/layoutProfileFollowing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/following"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_12" />
+
+            <ImageView
+                android:layout_width="@dimen/margin_30"
+                android:layout_height="@dimen/margin_30"
+                android:layout_gravity="center"
+                android:src="@drawable/following" />
+
+            <TextView
+                android:id="@+id/txtFollowingCount"
+                style="@style/RegularCondensed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="0"
+                android:textAllCaps="true"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_14" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:background="@color/light_grey_transparent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10">
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.7"
+            android:gravity="start"
+            android:text="@string/recent_posts"
+            android:textColor="@color/appColor"
+            android:textSize="@dimen/text_16" />
+
+        <TextView
+            android:id="@+id/txtViewAll"
+            style="@style/Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_weight="0.3"
+            android:gravity="end"
+            android:text="@string/view_all"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_15" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_60"
+        android:padding="@dimen/margin_5">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentPosts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txtNoRecentPosts"
+            style="@style/Regular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/no_recent_posts"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_14"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</LinearLayout>

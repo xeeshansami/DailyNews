@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/layoutFullImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivFullImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_placeholder" />
+
+        <TextView
+            android:id="@+id/txtFullImageNewsTitle"
+            style="@style/RegularCondensed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_70"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_15" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/viewBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:layout_gravity="bottom"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layoutFullImageBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_50"
+        android:layout_gravity="bottom"
+        android:background="@color/black_transparent"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_5"
+        android:paddingEnd="@dimen/margin_10"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTimesAgoFullImage"
+                style="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_14" />
+
+            <TextView
+                android:id="@+id/txtDistrictNameFullImage"
+                style="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_14" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivWhatsApp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/whatsapp" />
+
+        <ImageView
+            android:id="@+id/ivShareFullImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_weight="1"
+            android:src="@drawable/share"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBottomFullImageAppName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_50"
+        android:layout_gravity="bottom"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_1"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_5"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/margin_40"
+                android:layout_height="@dimen/margin_40"
+                android:layout_gravity="center|end"
+                android:src="@drawable/news_logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_5"
+                android:gravity="center|start"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_weight="0.5"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/RegularCondensed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:text="@string/download"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_12" />
+
+                    <TextView
+                        style="@style/Bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-4dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtShareContentDesc"
+                        style="@style/Bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="-8dp"
+                        android:text="@string/share_app_name3"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_12"
+                        android:visibility="visible"
+                        app:autoSizeMaxTextSize="@dimen/text_20"
+                        app:autoSizeMinTextSize="@dimen/text_14"
+                        app:autoSizeTextType="uniform" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_5"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtNewsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="75"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:id="@+id/txtNewsDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="500"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15" />
+    </LinearLayout>
+
+
+</FrameLayout>

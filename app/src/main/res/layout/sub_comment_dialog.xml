@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/margin_20"
+    android:paddingBottom="@dimen/margin_20"
+    android:paddingStart="@dimen/margin_10"
+    android:paddingEnd="@dimen/margin_10">
+
+    <TextView
+        android:id="@+id/txtNewsTitle"
+        style="@style/Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="start"
+        android:singleLine="true"
+        android:maxLines="4"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_13"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/etComments"
+        style="@style/Regular"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_100"
+        android:layout_marginTop="@dimen/margin_20"
+        android:background="@drawable/post_news_edit_text_bg"
+        android:gravity="start"
+        android:hint="@string/write_comments"
+        android:maxLines="4"
+        android:padding="@dimen/margin_5"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_40"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_10"
+        android:paddingEnd="@dimen/margin_10">
+
+        <TextView
+            android:id="@+id/txtCancel"
+            style="@style/RegularCondensed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_weight="1"
+            android:background="@color/red"
+            android:gravity="center"
+            android:paddingTop="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_10"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:id="@+id/txtSubmit"
+            style="@style/RegularCondensed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_weight="1"
+            android:background="@color/appColor"
+            android:gravity="center"
+            android:paddingTop="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_10"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_18" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

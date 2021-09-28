@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource"
+    android:layout_gravity="center"
+    android:gravity="center">
+    <com.google.android.ads.nativetemplates.TemplateView
+        android:layout_gravity="center"
+        android:id="@+id/ad_native"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_70"
+        app:gnt_template_type="@layout/gnt_medium_template_view">
+    </com.google.android.ads.nativetemplates.TemplateView>
+</LinearLayout>

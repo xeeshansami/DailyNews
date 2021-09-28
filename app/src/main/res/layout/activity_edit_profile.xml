@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.EditProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appColor"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appColor"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingEnd="@dimen/margin_10"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/ivCloseEditProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/close" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivDoneEditProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/done" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="@dimen/margin_130"
+                android:layout_height="@dimen/margin_130"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_5">
+
+                <com.daily_smart.news_app.CustomViews.CircleImageView
+                    android:id="@+id/ivEditProfileImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/defult_profile" />
+
+                <ImageView
+                    android:id="@+id/ivPickImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/camera" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_20"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_10">
+
+            <EditText
+                android:id="@+id/etDistrict"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_50"
+                android:background="@drawable/edit_profile_field_bg"
+                android:focusable="false"
+                android:hint="@string/district"
+                android:padding="@dimen/margin_5" />
+
+            <EditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_50"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@drawable/edit_profile_field_bg"
+                android:hint="@string/full_name"
+                android:padding="@dimen/margin_5" />
+
+            <EditText
+                android:id="@+id/etMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_50"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@drawable/edit_profile_field_bg"
+                android:focusable="false"
+                android:hint="@string/mobile_number"
+                android:inputType="phone"
+                android:padding="@dimen/margin_5" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_50"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@drawable/edit_profile_field_bg"
+                android:hint="@string/email"
+                android:padding="@dimen/margin_5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_50"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/margin_10"
+                android:paddingEnd="@dimen/margin_10">
+
+                <TextView
+                    android:id="@+id/txtCancelProfile"
+                    style="@style/RegularCondensed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:layout_weight="1"
+                    android:background="@color/red"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/margin_10"
+                    android:paddingBottom="@dimen/margin_10"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/txtUpdateProfile"
+                    style="@style/RegularCondensed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_weight="1"
+                    android:background="@color/appColor"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/margin_10"
+                    android:paddingBottom="@dimen/margin_10"
+                    android:text="@string/update"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_18" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/idImagePicker"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/light_grey"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_500"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/imgSelected"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+
+            <com.theartofdev.edmodo.cropper.CropImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/imgCropImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnLL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_80"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_60"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iBtnCancel"
+                android:layout_width="@dimen/margin_60"
+                android:layout_height="@dimen/margin_60"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/margin_70"
+                android:background="@color/light_grey"
+                android:src="@drawable/cancel_post" />
+
+            <ImageView
+                android:id="@+id/btnRotate"
+                android:layout_width="@dimen/margin_50"
+                android:layout_height="@dimen/margin_50"
+                android:layout_gravity="center"
+                android:background="@drawable/rotate_img_bg"
+                android:padding="@dimen/margin_5"
+                android:src="@drawable/rotate"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/btnSelect"
+                android:layout_width="@dimen/margin_50"
+                android:layout_height="@dimen/margin_50"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_70"
+                android:background="@drawable/done_bg"
+                android:padding="@dimen/margin_5"
+                android:src="@drawable/done"
+                android:visibility="visible"
+                app:tint="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
