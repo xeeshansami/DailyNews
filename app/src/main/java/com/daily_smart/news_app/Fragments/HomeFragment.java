@@ -80,6 +80,7 @@ import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.google.android.gms.ads.nativead.NativeAdView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.rvadapter.AdmobNativeAdAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -98,6 +99,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class HomeFragment extends Fragment {
+    private int intersitailCount=0;
     private RecyclerView recyclerViewCategories, recyclerViewLatestNews, rvComments;
     private HomeCategoriesAdapter homeCategoriesAdapter;
     private HomeLatestNewsAdapter homeLatestNewsAdapter;
@@ -200,6 +202,26 @@ public class HomeFragment extends Fragment {
         recyclerViewLatestNews.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerViewLatestNews.setLayoutManager(linearLayoutManager);
+
+        recyclerViewLatestNews.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                LinearLayoutManager llm = (LinearLayoutManager) recyclerViewLatestNews.getLayoutManager();
+               int displayedposition = llm.findFirstVisibleItemPosition();
+               if(displayedposition % 5==0){
+                   Log.i("ScrollViewInit", "ads Show "+displayedposition);
+                   prepareInterstitialAd("ca-app-pub-3422922123561518/2061535131");
+               }
+
+            }
+        });
+
         if (shareData.getAuthenticationId().isEmpty()) {
             deviceRegistration(shareData.getAuthenticationDeviceId(), shareData.getFcmToken());
         }
@@ -390,23 +412,24 @@ public class HomeFragment extends Fragment {
     }
     private void prepareInterstitialAd(String interstitialAdMobId) {
         Log.i("CheckingInter","is Working");
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        InterstitialAd.load(getActivity(), interstitialAdMobId, adRequest, new InterstitialAdLoadCallback() {
-//            @Override
-//            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-//                // The mInterstitialAd reference will be null until
-//                // an ad is loaded.
-//                mInterstitialAd = interstitialAd;
-//                Log.e("onAdLoaded", "onAdLoaded");
-//                mInterstitialAd.show(getActivity());
-//            }
-//
-//            @Override
-//            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-//                // Handle the error
-//                mInterstitialAd = null;
-//            }
-//        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(getActivity(), interstitialAdMobId, adRequest, new InterstitialAdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                // The mInterstitialAd reference will be null until
+                // an ad is loaded.
+                mInterstitialAd = interstitialAd;
+                Log.e("onAdLoaded", "onAdLoaded");
+                mInterstitialAd.show(getActivity());
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                Log.e("onAdLoaded", "onAdLoaded " +loadAdError.getMessage());
+                // Handle the error
+                mInterstitialAd = null;
+            }
+        });
     }
 
     private void deviceRegistration(final String deviceId, final String fcmToken) {
@@ -503,7 +526,9 @@ public class HomeFragment extends Fragment {
                                         getNewsBasedOnCategory(categoryId, districtId);
                                     }
                                 });
+
                                 recyclerViewCategories.setAdapter(homeCategoriesAdapter);
+                                homeCategoriesAdapter.notifyDataSetChanged();
                             } catch (Exception ex) {
                                 // Catch exception here
                             }
@@ -837,9 +862,14 @@ public class HomeFragment extends Fragment {
                                         getAdsSettings();
                                     }
                                 });
-                                recyclerViewLatestNews.setAdapter(homeLatestNewsAdapter);
+
+                                AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-3422922123561518/9556881775", homeLatestNewsAdapter,
+                                        "medium").adItemInterval(3).build();
+                                admobNativeAdAdapter.notifyDataSetChanged();
+                                recyclerViewLatestNews.setAdapter(admobNativeAdAdapter);
                                 recyclerViewLatestNews.scrollToPosition(scrolledPosition);
                                 homeLatestNewsAdapter.notifyDataSetChanged();
+                                admobNativeAdAdapter.notifyDataSetChanged();
 
                             } catch (Exception ex) {
                                 Log.e("Exception", ex.getMessage());

@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.google.android.ads.nativetemplates"
+3    package="com.google.admob_advanced_native_recyvlerview"
 4    android:versionCode="2"
 5    android:versionName="1.1" >
 6
@@ -10,9 +10,8 @@
 9        android:targetSdkVersion="30" />
 9-->C:\Users\mohammad.zeeshan1\Downloads\DailySmartNews\nativetemplates\src\main\AndroidManifest.xml
 10
-11    <application android:supportsRtl="true" >
-11-->C:\Users\mohammad.zeeshan1\Downloads\DailySmartNews\nativetemplates\src\main\AndroidManifest.xml:3:3-5:17
-11-->C:\Users\mohammad.zeeshan1\Downloads\DailySmartNews\nativetemplates\src\main\AndroidManifest.xml:3:16-42
-12    </application>
-13
-14</manifest>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\mohammad.zeeshan1\Downloads\DailySmartNews\nativetemplates\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\mohammad.zeeshan1\Downloads\DailySmartNews\nativetemplates\src\main\AndroidManifest.xml:4:22-64
+12
+13</manifest>

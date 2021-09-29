@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "com.google.android.ads.nativetemplates",
+  "applicationId": "com.google.admob_advanced_native_recyvlerview",
   "variantType": "LIBRARY",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "AndroidManifest.xml",
       "properties": {
-        "packageId": "com.google.android.ads.nativetemplates",
+        "packageId": "com.google.admob_advanced_native_recyvlerview",
         "split": ""
       }
     }

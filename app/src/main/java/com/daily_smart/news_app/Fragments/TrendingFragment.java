@@ -28,6 +28,7 @@ import com.daily_smart.news_app.Utilities.Config;
 import com.daily_smart.news_app.Utilities.GeneralFunctions;
 import com.daily_smart.news_app.Utilities.ShareData;
 import com.daily_smart.news_app.Volley.VolleySingleton;
+import com.google.rvadapter.AdmobNativeAdAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -117,7 +118,11 @@ public class TrendingFragment extends Fragment {
                                         startActivity(intent);
                                     }
                                 });
-                                recyclerViewTrending.setAdapter(trendingAdapter);
+                                AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-3422922123561518/9556881775", trendingAdapter,
+                                        "small").adItemInterval(3).build();
+                                recyclerViewTrending.setAdapter(admobNativeAdAdapter);
+                                admobNativeAdAdapter.notifyDataSetChanged();
+                                trendingAdapter.notifyDataSetChanged();
 //                                getBannerAds();
 //                                loadBanners();
 //                                trendingAdapter.notifyDataSetChanged();

@@ -12,12 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.ads.nativetemplates;
+package com.google.nativetemplates;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -26,18 +27,18 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.admob_advanced_native_recyvlerview.R;
-import com.google.android.gms.ads.formats.UnifiedNativeAd;
 import com.google.android.gms.ads.nativead.MediaView;
 import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.ads.nativead.NativeAdView;
 
-/**
- * Base class for a template view. *
- */
+
+/** Base class for a template view. * */
 public class TemplateView extends FrameLayout {
 
   private int templateType;
@@ -71,6 +72,7 @@ public class TemplateView extends FrameLayout {
     initView(context, attrs);
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   public TemplateView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     super(context, attrs, defStyleAttr, defStyleRes);
     initView(context, attrs);
@@ -225,8 +227,7 @@ public class TemplateView extends FrameLayout {
     if (starRating != null && starRating > 0) {
       secondaryView.setVisibility(GONE);
       ratingBar.setVisibility(VISIBLE);
-      ratingBar.setRating(starRating.floatValue());
-
+      ratingBar.setMax(5);
       nativeAdView.setStarRatingView(ratingBar);
     } else {
       secondaryView.setText(secondaryText);
@@ -259,7 +260,7 @@ public class TemplateView extends FrameLayout {
   }
 
   public String getTemplateTypeName() {
-    if (templateType == R.layout.gnt_medium_template_view) {
+    if (templateType == R.layout.gnt_custom_small_template_view) {
       return MEDIUM_TEMPLATE;
     } else if (templateType == R.layout.gnt_small_template_view) {
       return SMALL_TEMPLATE;
@@ -275,7 +276,7 @@ public class TemplateView extends FrameLayout {
     try {
       templateType =
           attributes.getResourceId(
-              R.styleable.TemplateView_gnt_template_type, R.layout.gnt_medium_template_view);
+              R.styleable.TemplateView_gnt_template_type, R.layout.gnt_custom_small_template_view);
     } finally {
       attributes.recycle();
     }
@@ -287,17 +288,17 @@ public class TemplateView extends FrameLayout {
   @Override
   public void onFinishInflate() {
     super.onFinishInflate();
-    nativeAdView = (NativeAdView) findViewById(R.id.native_ad_view);
-    primaryView = (TextView) findViewById(R.id.primary);
-    secondaryView = (TextView) findViewById(R.id.secondary);
-    tertiaryView = (TextView) findViewById(R.id.body);
+    nativeAdView = findViewById(R.id.native_ad_view);
+    primaryView = findViewById(R.id.primary);
+    secondaryView = findViewById(R.id.secondary);
+    tertiaryView = findViewById(R.id.body);
 
-    ratingBar = (RatingBar) findViewById(R.id.rating_bar);
+    ratingBar = findViewById(R.id.rating_bar);
     ratingBar.setEnabled(false);
 
-    callToActionView = (Button) findViewById(R.id.cta);
-    iconView = (ImageView) findViewById(R.id.icon);
-    mediaView = (MediaView) findViewById(R.id.media_view);
-    background = (ConstraintLayout) findViewById(R.id.background);
+    callToActionView = findViewById(R.id.cta);
+    iconView = findViewById(R.id.icon);
+    mediaView = findViewById(R.id.media_view);
+    background = findViewById(R.id.background);
   }
 }

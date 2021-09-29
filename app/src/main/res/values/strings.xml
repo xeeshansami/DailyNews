@@ -6,6 +6,8 @@
 
     <!-- Google ads application ID -->
     <string name="ads_application_id">ca-app-pub-3422922123561518~4219878663</string>
+<!--    <string name="ads_application_id">ca-app-pub-3940256099942544~3347511713</string>-->
+
 
     <!-- Common messages -->
     <string name="no_internet">No Internet Connection</string>
