@@ -191,7 +191,7 @@ public class HomeFragment extends Fragment {
         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerViewLatestNews.setLayoutManager(linearLayoutManager);
 
-        recyclerViewLatestNews.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        /*recyclerViewLatestNews.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
@@ -208,7 +208,7 @@ public class HomeFragment extends Fragment {
                }
 
             }
-        });
+        });*/
 
         if (shareData.getAuthenticationId().isEmpty()) {
             deviceRegistration(shareData.getAuthenticationDeviceId(), shareData.getFcmToken());

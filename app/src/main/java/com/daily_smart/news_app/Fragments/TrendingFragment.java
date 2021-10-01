@@ -119,7 +119,7 @@ public class TrendingFragment extends Fragment {
                                     }
                                 });
                                 AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with(getActivity().getResources().getString(R.string.nativeAds), trendingAdapter,
-                                        "small").adItemInterval(3).build();
+                                        "small").adItemInterval(5).build();
                                 recyclerViewTrending.setAdapter(admobNativeAdAdapter);
                                 trendingAdapter.notifyDataSetChanged();
 //                                getBannerAds();

@@ -98,7 +98,6 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private String mGoogleNativeId = Config.EMPTY_STRING;
     private TemplateView template;
     public TemplateView layoutNative;
-
     public HomeLatestNewsAdapter(Context context, ArrayList<NewsItemModel> newsItemModelArrayList, Lifecycle lifecycle,
                                  String googleNativeId, NewsItemClickedInterface newsItemClickedInterface) {
         this.mContext = context;
@@ -171,7 +170,7 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         final NewsItemModel newsItemModel = newsItemModelArrayList.get(position);
 //        newsTableRepository.insert(newsItemModel);
         newsItemModel1 = newsItemModelArrayList.get(position);
-        if (position %10 == 0) {
+        if (position %10 == 0 && position > 1) {
             Log.i("ScrollViewInit", " ads shown " + position);
             prepareInterstitialAd(mContext.getResources().getString(R.string.intersitialAds));
         }
@@ -1150,7 +1149,7 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemViewType(int position) {
-        if (position > 1 && position % 4 == 0) {
+        if (position > 1 && position % 5 == 0) {
             return NATIVE_VIEW;
         } else {
             if ((!newsItemModelArrayList.get(position).getPostImages().get(0).getPostImage().isEmpty() && newsItemModelArrayList.get(position).getFullscreen().equalsIgnoreCase("0") && newsItemModelArrayList.get(position).getPostImages().size() == 1) || !newsItemModelArrayList.get(position).getYoutube_link().isEmpty() || !newsItemModelArrayList.get(position).getPostVideo().isEmpty()) {
