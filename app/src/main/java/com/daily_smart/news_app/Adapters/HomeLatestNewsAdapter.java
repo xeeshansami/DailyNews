@@ -136,10 +136,10 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 //                View interstitialAdViewType = layoutInflater.inflate(R.layout.layout_interstitial_ads, parent, false);
 //                viewHolder = new InterstitialAdsViewHolder(interstitialAdViewType);
 //                break;
-          /*  case NATIVE_VIEW:
+            case NATIVE_VIEW:
                 View nativeAdViewType = layoutInflater.inflate(R.layout.layout_native_ads, parent, false);
                 viewHolder = new NativeAdsViewHolder(nativeAdViewType);
-                break;*/
+                break;
         }
         return viewHolder;
     }
@@ -173,7 +173,7 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         newsItemModel1 = newsItemModelArrayList.get(position);
         if (position %10 == 0) {
             Log.i("ScrollViewInit", " ads shown " + position);
-            prepareInterstitialAd("ca-app-pub-3422922123561518/4077356209");
+            prepareInterstitialAd(mContext.getResources().getString(R.string.intersitialAds));
         }
         switch (holder.getItemViewType()) {
             case IMAGE_VIEW_TYPE:
@@ -737,18 +737,18 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                     newsItemClickedInterface.showInterstitialAd();
                 }
                 break;*/
-          /*  case NATIVE_VIEW:
+            case NATIVE_VIEW:
                 if (newsItemClickedInterface != null) {
                     newsItemClickedInterface.showNativeAds();
                 }
-//                setAdNative();
+                setAdNative();
 
-                break;*/
+                break;
         }
     }
 
     public void setAdNative() {
-        AdLoader adLoader = new AdLoader.Builder(Objects.requireNonNull(mContext), "ca-app-pub-3422922123561518/9329682884")
+        AdLoader adLoader = new AdLoader.Builder(Objects.requireNonNull(mContext), mContext.getResources().getString(R.string.nativeAds))
                 .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                     @Override
                     public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
@@ -1150,9 +1150,9 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemViewType(int position) {
-//        if (position > 1 && position % 4 == 0) {
-//            return NATIVE_VIEW;
-//        } else {
+        if (position > 1 && position % 4 == 0) {
+            return NATIVE_VIEW;
+        } else {
             if ((!newsItemModelArrayList.get(position).getPostImages().get(0).getPostImage().isEmpty() && newsItemModelArrayList.get(position).getFullscreen().equalsIgnoreCase("0") && newsItemModelArrayList.get(position).getPostImages().size() == 1) || !newsItemModelArrayList.get(position).getYoutube_link().isEmpty() || !newsItemModelArrayList.get(position).getPostVideo().isEmpty()) {
                 return IMAGE_VIEW_TYPE;
             } else if (!newsItemModelArrayList.get(position).getPostImages().get(0).getPostImage().isEmpty() && newsItemModelArrayList.get(position).getFullscreen().equalsIgnoreCase("1")) {
@@ -1161,7 +1161,7 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 return VIEW_PAGER_VIEW_TYPE;
             }
             return DEFAULT_VIEW_TYPE;
-//        }
+        }
     }
 
     public void releasePlayer() {

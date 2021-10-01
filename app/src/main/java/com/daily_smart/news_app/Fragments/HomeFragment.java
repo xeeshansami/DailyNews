@@ -70,7 +70,6 @@ import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.ads.nativead.NativeAdView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.rvadapter.AdmobNativeAdAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -831,9 +830,8 @@ public class HomeFragment extends Fragment {
                                         getAdsSettings();
                                     }
                                 });
-                                AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-3422922123561518/9329682884", homeLatestNewsAdapter,
-                                        "medium").adItemInterval(3).build();
-                                recyclerViewLatestNews.setAdapter(admobNativeAdAdapter);
+                                recyclerViewLatestNews.setAdapter(homeLatestNewsAdapter);
+                                recyclerViewLatestNews.scrollToPosition(scrolledPosition);
                                 homeLatestNewsAdapter.notifyDataSetChanged();
                             } catch (Exception ex) {
                                 Log.e("Exception", ex.getMessage());

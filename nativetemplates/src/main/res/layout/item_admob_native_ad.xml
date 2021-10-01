@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/native_ad_container"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:ignore="ResourceName">
+    android:orientation="vertical"
+    android:id="@+id/native_ad_container"
+    tools:ignore="MissingDefaultResource"
+    android:layout_gravity="center"
+    android:gravity="center">
 
     <com.google.nativetemplates.TemplateView
         android:id="@+id/my_templatesmall"
@@ -17,13 +18,12 @@
         android:layout_height="match_parent" />
 
     <com.google.nativetemplates.TemplateView
+        android:layout_gravity="center"
         android:id="@+id/my_templatemedium"
-        app:gnt_template_type="@layout/gnt_medium_template_view"
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
+        android:layout_height="match_parent"
+        app:gnt_template_type="@layout/gnt_medium_template_view">
+    </com.google.nativetemplates.TemplateView>
     <com.google.nativetemplates.TemplateView
         android:id="@+id/my_templatecustom"
         app:gnt_template_type="@layout/gnt_custom_small_template_view"
