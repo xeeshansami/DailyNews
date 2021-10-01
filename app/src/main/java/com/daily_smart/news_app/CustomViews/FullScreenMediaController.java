@@ -2,7 +2,6 @@ package com.daily_smart.news_app.CustomViews;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;

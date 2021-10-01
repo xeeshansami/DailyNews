@@ -52,7 +52,6 @@ import com.daily_smart.news_app.Volley.VideoUploadHelper;
 import com.daily_smart.news_app.Volley.VolleyMultipartRequest;
 import com.daily_smart.news_app.Volley.VolleySingleton;
 import com.squareup.picasso.Picasso;
-import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.json.JSONArray;

@@ -22,7 +22,6 @@ import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -33,6 +32,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.daily_smart.news_app.Activities.MainActivity;
 import com.daily_smart.news_app.CustomViews.CircleImageView;
 import com.daily_smart.news_app.Models.NewsItemModel;
 import com.daily_smart.news_app.Models.PostImagesModel;
@@ -59,11 +60,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
@@ -101,6 +98,7 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private String mGoogleNativeId = Config.EMPTY_STRING;
     private TemplateView template;
     public TemplateView layoutNative;
+
     public HomeLatestNewsAdapter(Context context, ArrayList<NewsItemModel> newsItemModelArrayList, Lifecycle lifecycle,
                                  String googleNativeId, NewsItemClickedInterface newsItemClickedInterface) {
         this.mContext = context;
@@ -134,16 +132,38 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 View defaultViewType = layoutInflater.inflate(R.layout.default_view_type, parent, false);
                 viewHolder = new DefaultViewTypeViewHolder(defaultViewType);
                 break;
-            case INTERSTITIAL_ADS_VIEW_TYPE:
-                View interstitialAdViewType = layoutInflater.inflate(R.layout.layout_interstitial_ads, parent, false);
-                viewHolder = new InterstitialAdsViewHolder(interstitialAdViewType);
-                break;
-            case NATIVE_VIEW:
+//            case INTERSTITIAL_ADS_VIEW_TYPE:
+//                View interstitialAdViewType = layoutInflater.inflate(R.layout.layout_interstitial_ads, parent, false);
+//                viewHolder = new InterstitialAdsViewHolder(interstitialAdViewType);
+//                break;
+          /*  case NATIVE_VIEW:
                 View nativeAdViewType = layoutInflater.inflate(R.layout.layout_native_ads, parent, false);
                 viewHolder = new NativeAdsViewHolder(nativeAdViewType);
-                break;
+                break;*/
         }
         return viewHolder;
+    }
+
+    private void prepareInterstitialAd(String interstitialAdMobId) {
+        Log.i("CheckingInter", "is Working");
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(mContext, interstitialAdMobId, adRequest, new InterstitialAdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                // The mInterstitialAd reference will be null until
+                // an ad is loaded.
+                mInterstitialAd = interstitialAd;
+                Log.e("onAdLoaded", "onAdLoaded");
+                mInterstitialAd.show((MainActivity)mContext);
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                Log.e("onAdLoaded", "onAdLoaded " + loadAdError.getMessage());
+                // Handle the error
+                mInterstitialAd = null;
+            }
+        });
     }
 
     @Override
@@ -151,6 +171,10 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         final NewsItemModel newsItemModel = newsItemModelArrayList.get(position);
 //        newsTableRepository.insert(newsItemModel);
         newsItemModel1 = newsItemModelArrayList.get(position);
+        if (position %10 == 0) {
+            Log.i("ScrollViewInit", " ads shown " + position);
+            prepareInterstitialAd("ca-app-pub-3422922123561518/4077356209");
+        }
         switch (holder.getItemViewType()) {
             case IMAGE_VIEW_TYPE:
                 final ImageViewHolder imageViewHolder = (ImageViewHolder) holder;
@@ -708,45 +732,47 @@ public class HomeLatestNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                     newsItemClickedInterface.newsViewTypeMethod(String.valueOf(IMAGE_VIEW_TYPE), newsItemModel.getNews_id(), position);
                 }
                 break;
-            case INTERSTITIAL_ADS_VIEW_TYPE:
+          /*  case INTERSTITIAL_ADS_VIEW_TYPE:
                 if (newsItemClickedInterface != null) {
                     newsItemClickedInterface.showInterstitialAd();
                 }
-                break;
-            case NATIVE_VIEW:
-                if(newsItemClickedInterface != null ) {
+                break;*/
+          /*  case NATIVE_VIEW:
+                if (newsItemClickedInterface != null) {
                     newsItemClickedInterface.showNativeAds();
                 }
-                setAdNative();
+//                setAdNative();
 
-                break;
+                break;*/
         }
     }
-public void setAdNative(){
-    AdLoader adLoader = new AdLoader.Builder(Objects.requireNonNull(mContext), "ca-app-pub-3940256099942544/2247696110")
-            .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                @Override
-                public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
-                    // Show the ad.
-                    layoutNative.setNativeAd(nativeAd);
-                }
 
-            })
-            .withAdListener(new AdListener() {
-                @Override
-                public void onAdFailedToLoad(LoadAdError adError) {
-                    Log.i("Adsshow","failed");
-                    // Handle the failure by logging, altering the UI, and so on.
-                    setAdNative();
-                }
-            })
-            .withNativeAdOptions(new NativeAdOptions.Builder()
-                    // Methods in the NativeAdOptions.Builder class can be
-                    // used here to specify individual options settings.
-                    .build())
-            .build();
-    adLoader.loadAd(new AdRequest.Builder().build());
-}
+    public void setAdNative() {
+        AdLoader adLoader = new AdLoader.Builder(Objects.requireNonNull(mContext), "ca-app-pub-3422922123561518/9329682884")
+                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
+                    @Override
+                    public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
+                        // Show the ad.
+                        layoutNative.setNativeAd(nativeAd);
+                    }
+
+                })
+                .withAdListener(new AdListener() {
+                    @Override
+                    public void onAdFailedToLoad(LoadAdError adError) {
+                        Log.i("Adsshow", "failed");
+                        // Handle the failure by logging, altering the UI, and so on.
+//                    setAdNative();
+                    }
+                })
+                .withNativeAdOptions(new NativeAdOptions.Builder()
+                        // Methods in the NativeAdOptions.Builder class can be
+                        // used here to specify individual options settings.
+                        .build())
+                .build();
+        adLoader.loadAd(new AdRequest.Builder().build());
+    }
+
     private void initViewPager(final int position, final ViewPager multiImageViewPager, final List<PostImagesModel> postImages, final LinearLayout layoutDots) {
         multiImageViewPager.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override
@@ -969,6 +995,7 @@ public void setAdNative(){
             layoutInterstitial = itemView.findViewById(R.id.layoutInterstitial);
         }
     }
+
     public class NativeAdsViewHolder extends RecyclerView.ViewHolder {
         public NativeAdsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -979,9 +1006,10 @@ public void setAdNative(){
         }
     }
 
-    public void setNativeAd(NativeAd nativeAd){
+    public void setNativeAd(NativeAd nativeAd) {
         layoutNative.setNativeAd(nativeAd);
     }
+
     public class MultiImageViewHolder extends RecyclerView.ViewHolder {
         private FrameLayout layoutViewPager;
         private TextView txtTimesAgoMultiImageView, txtDistrictNameMultiImage, txtShareContentTitle, txtShareContentDesc;
@@ -1122,10 +1150,9 @@ public void setAdNative(){
 
     @Override
     public int getItemViewType(int position) {
-        if (position > 1 && position % 4 == 0) {
-            return NATIVE_VIEW;
-        }
-        else {
+//        if (position > 1 && position % 4 == 0) {
+//            return NATIVE_VIEW;
+//        } else {
             if ((!newsItemModelArrayList.get(position).getPostImages().get(0).getPostImage().isEmpty() && newsItemModelArrayList.get(position).getFullscreen().equalsIgnoreCase("0") && newsItemModelArrayList.get(position).getPostImages().size() == 1) || !newsItemModelArrayList.get(position).getYoutube_link().isEmpty() || !newsItemModelArrayList.get(position).getPostVideo().isEmpty()) {
                 return IMAGE_VIEW_TYPE;
             } else if (!newsItemModelArrayList.get(position).getPostImages().get(0).getPostImage().isEmpty() && newsItemModelArrayList.get(position).getFullscreen().equalsIgnoreCase("1")) {
@@ -1134,7 +1161,7 @@ public void setAdNative(){
                 return VIEW_PAGER_VIEW_TYPE;
             }
             return DEFAULT_VIEW_TYPE;
-        }
+//        }
     }
 
     public void releasePlayer() {

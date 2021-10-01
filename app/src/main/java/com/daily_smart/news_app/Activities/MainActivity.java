@@ -17,29 +17,19 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.daily_smart.news_app.CustomViews.LoginDialog;
 import com.daily_smart.news_app.CustomViews.PostNewsOptionsDialog;
 import com.daily_smart.news_app.Fragments.HomeFragment;
 import com.daily_smart.news_app.Fragments.ProfileFragment;
 import com.daily_smart.news_app.Fragments.SettingsFragment;
 import com.daily_smart.news_app.Fragments.TrendingFragment;
-import com.daily_smart.news_app.Models.AdsSettingsModel;
 import com.daily_smart.news_app.R;
 import com.daily_smart.news_app.Utilities.Config;
 import com.daily_smart.news_app.Utilities.GeneralFunctions;
 import com.daily_smart.news_app.Utilities.ShareData;
-import com.daily_smart.news_app.Volley.VolleySingleton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.analytics.FirebaseAnalytics;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements HomeFragment.PassViewsToActivityListener {
     private BottomNavigationView bottomNavigationView;

@@ -118,10 +118,9 @@ public class TrendingFragment extends Fragment {
                                         startActivity(intent);
                                     }
                                 });
-                                AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-3422922123561518/9556881775", trendingAdapter,
+                                AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-3422922123561518/9329682884", trendingAdapter,
                                         "small").adItemInterval(3).build();
                                 recyclerViewTrending.setAdapter(admobNativeAdAdapter);
-                                admobNativeAdAdapter.notifyDataSetChanged();
                                 trendingAdapter.notifyDataSetChanged();
 //                                getBannerAds();
 //                                loadBanners();

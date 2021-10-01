@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,12 +16,9 @@ import com.google.admob_advanced_native_recyvlerview.R;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.google.nativetemplates.NativeTemplateStyle;
 import com.google.nativetemplates.TemplateView;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by thuanle on 2/12/17.
@@ -121,12 +117,13 @@ public class AdmobNativeAdAdapter extends RecyclerViewAdapterWrapper {
                     })
                     .withAdListener(new AdListener() {
                         @Override
-                        public void onAdFailedToLoad(@NonNull @NotNull LoadAdError loadAdError) {
-                            Log.e("admobnative","error:"+loadAdError);
+                        public void onAdFailedToLoad(int errorCode) {
+                            Log.e("admobnative","error:"+errorCode);
                             adHolder.adContainer.setVisibility(View.GONE);
+                            // Handle the failure by logging, altering the UI, and so on.
+
                         }
                     })
-
                     .withNativeAdOptions(new NativeAdOptions.Builder()
                             // Methods in the NativeAdOptions.Builder class can be
                             // used here to specify individual options settings.

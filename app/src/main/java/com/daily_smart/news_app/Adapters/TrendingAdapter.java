@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -18,9 +17,6 @@ import com.daily_smart.news_app.Models.NewsItemModel;
 import com.daily_smart.news_app.R;
 import com.daily_smart.news_app.Utilities.Config;
 import com.daily_smart.news_app.Utilities.TimeAgo;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -98,13 +94,13 @@ public class TrendingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
 //                bannerAdsViewHolder.layoutBannerAds.addView(adView);
                 adView.loadAd();*/
-                BannerAdsViewHolder bannerAdsViewHolder = (BannerAdsViewHolder) holder;
-                AdView mAdView = new AdView(mContext);
-                mAdView.setAdSize(AdSize.SMART_BANNER);
-                mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
-                bannerAdsViewHolder.adMobView.addView(mAdView);
-                AdRequest adRequest = new AdRequest.Builder().build();
-                mAdView.loadAd(adRequest);
+//                BannerAdsViewHolder bannerAdsViewHolder = (BannerAdsViewHolder) holder;
+//                AdView mAdView = new AdView(mContext);
+//                mAdView.setAdSize(AdSize.SMART_BANNER);
+//                mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+//                bannerAdsViewHolder.adMobView.addView(mAdView);
+//                AdRequest adRequest = new AdRequest.Builder().build();
+//                mAdView.loadAd(adRequest);
 
 //                AdRequest adRequest = new AdRequest.Builder().build();
 //                bannerAdsViewHolder.googleAdView.loadAd(adRequest);

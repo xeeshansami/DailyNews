@@ -13,7 +13,7 @@
         android:required="true" />
 
     <application
-        android:name=".MyCustomApplication"
+        android:name="com.daily_smart.news_app.MyCustomApplication"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/news_logo"
@@ -22,29 +22,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activities.HelpandSupportActivity"
+            android:name="com.daily_smart.news_app.Activities.HelpandSupportActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.StatesActivity"
+            android:name="com.daily_smart.news_app.Activities.StatesActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.ProfileFollowingListActivity"
+            android:name="com.daily_smart.news_app.Activities.ProfileFollowingListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.GeneralSettingsActivity"
+            android:name="com.daily_smart.news_app.Activities.GeneralSettingsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.FavouritesListActivity"
+            android:name="com.daily_smart.news_app.Activities.FavouritesListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.TourScreenActivity"
+            android:name="com.daily_smart.news_app.Activities.TourScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.PostNewsActivity"
+            android:name="com.daily_smart.news_app.Activities.PostNewsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -59,7 +59,7 @@
         </provider>
 
         <activity
-            android:name=".Activities.SplashScreen"
+            android:name="com.daily_smart.news_app.Activities.SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,19 +68,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.EditProfileActivity"
+            android:name="com.daily_smart.news_app.Activities.EditProfileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.VerifyOTPActivity"
+            android:name="com.daily_smart.news_app.Activities.VerifyOTPActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.CategoryActivity"
+            android:name="com.daily_smart.news_app.Activities.CategoryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.NewsDetailsActivity"
+            android:name="com.daily_smart.news_app.Activities.NewsDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -107,15 +107,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.LoginActivity"
+            android:name="com.daily_smart.news_app.Activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.DistrictListActivity"
+            android:name="com.daily_smart.news_app.Activities.DistrictListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.MainActivity"
+            android:name="com.daily_smart.news_app.Activities.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- Need these two lines for Android P -->
         <uses-library
@@ -135,20 +135,22 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/black" />
 
-        <receiver android:name=".Activities.IncomingSms">
+        <receiver android:name="com.daily_smart.news_app.Activities.IncomingSms">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name=".FCM.MyFirebaseMessagingService"
+            android:name="com.daily_smart.news_app.FCM.MyFirebaseMessagingService"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <meta-data android:name="com.google.android.gms.ads.flag.NATIVE_AD_DEBUGGER_ENABLED"
+            android:value="false" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/ads_application_id" />

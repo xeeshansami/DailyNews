@@ -7,11 +7,11 @@ import android.content.res.Configuration;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.daily_smart.news_app.Utilities.AppOpenManager;
 import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.FirebaseApp;
 
 public class MyCustomApplication extends Application {

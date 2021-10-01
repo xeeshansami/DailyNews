@@ -4,32 +4,26 @@ import static androidx.lifecycle.Lifecycle.Event.ON_START;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
 import com.daily_smart.news_app.MyCustomApplication;
-import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.appopen.AppOpenAd;
-
-import java.util.Date;
 
 /**
  * Prefetches App Open Ads.
  */
 public class AppOpenManager implements Application.ActivityLifecycleCallbacks, LifecycleObserver {
     private static final String LOG_TAG = "AppOpenManager";
-    private static final String AD_UNIT_ID = "ca-app-pub-3422922123561518/7273994059";
+    private static final String AD_UNIT_ID = "ca-app-pub-3422922123561518/7825029526";
     private AppOpenAd appOpenAd = null;
     private Activity currentActivity;
 

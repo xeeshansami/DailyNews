@@ -1,17 +1,13 @@
 package com.daily_smart.news_app.Activities;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
-import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;

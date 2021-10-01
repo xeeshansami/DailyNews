@@ -1,6 +1,5 @@
 package com.daily_smart.news_app.CustomViews;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -12,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.daily_smart.news_app.R;
-import com.daily_smart.news_app.Utilities.GeneralFunctions;
 
 public class PostNewsOptionsDialog implements View.OnClickListener {
     private Context mContext;

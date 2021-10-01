@@ -63,20 +63,10 @@ import com.daily_smart.news_app.Utilities.Config;
 import com.daily_smart.news_app.Utilities.GeneralFunctions;
 import com.daily_smart.news_app.Utilities.ShareData;
 import com.daily_smart.news_app.Volley.VolleySingleton;
-import com.google.android.ads.nativetemplates.NativeTemplateStyle;
 import com.google.android.ads.nativetemplates.TemplateView;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.nativead.MediaView;
 import com.google.android.gms.ads.nativead.NativeAd;
-import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.google.android.gms.ads.nativead.NativeAdView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -93,7 +83,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -214,9 +203,9 @@ public class HomeFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
                 LinearLayoutManager llm = (LinearLayoutManager) recyclerViewLatestNews.getLayoutManager();
                int displayedposition = llm.findFirstVisibleItemPosition();
-               if(displayedposition % 5==0){
-                   Log.i("ScrollViewInit", "ads Show "+displayedposition);
-                   prepareInterstitialAd("ca-app-pub-3422922123561518/2061535131");
+               if(displayedposition % 15!=0){
+//                   Log.i("ScrollViewInit", "ads Show "+displayedposition);
+//                   prepareInterstitialAd("ca-app-pub-3940256099942544/1033173712");
                }
 
             }
@@ -295,7 +284,7 @@ public class HomeFragment extends Fragment {
             }
 
         });
-        layoutNativeAds = homeView.findViewById(R.id.ad_native);
+//        layoutNativeAds = homeView.findViewById(R.id.ad_native);
 //        MobileAds.initialize(homeView.getContext(), new OnInitializationCompleteListener() {
 //            @Override
 //            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
@@ -410,27 +399,7 @@ public class HomeFragment extends Fragment {
 //        });
 
     }
-    private void prepareInterstitialAd(String interstitialAdMobId) {
-        Log.i("CheckingInter","is Working");
-        AdRequest adRequest = new AdRequest.Builder().build();
-        InterstitialAd.load(getActivity(), interstitialAdMobId, adRequest, new InterstitialAdLoadCallback() {
-            @Override
-            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                // The mInterstitialAd reference will be null until
-                // an ad is loaded.
-                mInterstitialAd = interstitialAd;
-                Log.e("onAdLoaded", "onAdLoaded");
-                mInterstitialAd.show(getActivity());
-            }
 
-            @Override
-            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                Log.e("onAdLoaded", "onAdLoaded " +loadAdError.getMessage());
-                // Handle the error
-                mInterstitialAd = null;
-            }
-        });
-    }
 
     private void deviceRegistration(final String deviceId, final String fcmToken) {
         try {
@@ -862,15 +831,10 @@ public class HomeFragment extends Fragment {
                                         getAdsSettings();
                                     }
                                 });
-
-                                AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-3422922123561518/9556881775", homeLatestNewsAdapter,
+                                AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-3422922123561518/9329682884", homeLatestNewsAdapter,
                                         "medium").adItemInterval(3).build();
-                                admobNativeAdAdapter.notifyDataSetChanged();
                                 recyclerViewLatestNews.setAdapter(admobNativeAdAdapter);
-                                recyclerViewLatestNews.scrollToPosition(scrolledPosition);
                                 homeLatestNewsAdapter.notifyDataSetChanged();
-                                admobNativeAdAdapter.notifyDataSetChanged();
-
                             } catch (Exception ex) {
                                 Log.e("Exception", ex.getMessage());
                                 // Catch exception here
@@ -932,8 +896,8 @@ public class HomeFragment extends Fragment {
                                     adsSettingsModel.setNativeFacebookId(jsonObject.getString("NativeFacebookId"));
                                     adsSettingsModel.setNativetype(jsonObject.getString("nativetype"));
                                     adsSettingsModel.setItemsbetweenNativeAds(jsonObject.getString("ItemsbetweenNativeAds"));
-                                    prepareInterstitialAd(adsSettingsModel.getInterstitialAdMobId());
-                                    prepareNativeAd(adsSettingsModel.getNativeAdMobId());
+//                                    prepareInterstitialAd(adsSettingsModel.getInterstitialAdMobId());
+//                                    prepareNativeAd(adsSettingsModel.getNativeAdMobId());
                                     Log.d("AdIdInters",adsSettingsModel.getInterstitialAdMobId());
                                     Log.d("AdIdNative",adsSettingsModel.getNativeAdMobId());
                                     googleNativeId = adsSettingsModel.getNativeAdMobId();

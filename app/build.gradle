@@ -80,6 +80,8 @@ dependencies {
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
     implementation 'com.facebook.android:audience-network-sdk:6.5.0'
     implementation 'com.google.android.gms:play-services-ads:20.3.0'
+    implementation 'com.google.android.ads.consent:consent-library:1.0.8'
+    implementation 'com.google.android.gms:play-services-ads-lite:20.3.0'
     implementation 'com.google.firebase:firebase-analytics'
 //    implementation 'com.akexorcist:screenshot-detection:1.0.1'
     implementation project(':nativetemplates')

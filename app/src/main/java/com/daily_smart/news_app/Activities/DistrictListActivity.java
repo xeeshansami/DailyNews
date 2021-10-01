@@ -1,9 +1,7 @@
 package com.daily_smart.news_app.Activities;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;

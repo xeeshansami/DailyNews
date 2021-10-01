@@ -1,7 +1,6 @@
 package com.daily_smart.news_app.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.daily_smart.news_app.Activities.CategoryActivity;
 import com.daily_smart.news_app.Models.CategoriesModel;
 import com.daily_smart.news_app.R;
 
