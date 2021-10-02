@@ -106,9 +106,9 @@ public class TrendingFragment extends Fragment {
                 currentItems = manager.getChildCount();
                 totalItems = manager.getItemCount();
                 scrollOutItems = manager.findFirstCompletelyVisibleItemPosition();
-                if (isScrolling ) {
-                    isScrolling=false;
-                    updateData(totalItems,totalItems+10);
+                if (isScrolling) {
+                    isScrolling = false;
+                    updateData(totalItems, totalItems + 30);
                 }
             }
         });
@@ -140,7 +140,7 @@ public class TrendingFragment extends Fragment {
                                     recyclerViewTrending.setVisibility(View.GONE);
                                     txtNoTrendingNews.setVisibility(View.VISIBLE);
                                 }
-                                updateData(0,10);
+                                updateData(0, 30);
                                 trendingAdapter = new TrendingAdapter(getActivity(), addNewsItemsList, googleBannerId, new TrendingAdapter.TrendingNewsInterface() {
                                     @Override
                                     public void trendingNewsMethod(String newsId) {
@@ -150,7 +150,7 @@ public class TrendingFragment extends Fragment {
                                     }
                                 });
                                 AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with(getActivity().getResources().getString(R.string.nativeAds), trendingAdapter,
-                                        "small").adItemInterval(3).build();
+                                        "small").adItemInterval(6).build();
                                 recyclerViewTrending.setAdapter(admobNativeAdAdapter);
                                 trendingAdapter.notifyDataSetChanged();
                             } catch (Exception ex) {
@@ -186,18 +186,24 @@ public class TrendingFragment extends Fragment {
         }
     }
 
-    private void updateData(int start,int EndNumb) {
+    private void updateData(int start, int EndNumb) {
         progressBar.setVisibility(View.VISIBLE);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                for (int i = start; i < EndNumb; i++) {
-                    addNewsItemsList.add(newsItemModelArrayList.get(i));
+                try {
+                    if (EndNumb < newsItemModelArrayList.size()) {
+                        for (int i = start; i < EndNumb; i++) {
+                            addNewsItemsList.add(newsItemModelArrayList.get(i));
+                        }
+                    }
                     trendingAdapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
+                } catch (Exception e) {
                     progressBar.setVisibility(View.GONE);
                 }
             }
-        },2000);
+        }, 3000);
     }
 
     private void getAdsSettings() {
