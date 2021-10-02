@@ -335,7 +335,7 @@
                     android:id="@+id/layoutNewsReporterDetails"
                     android:visibility="visible">
 
-                    <com.daily_smart.news_app.CustomViews.CircleImageView
+                    <com.paxees_daily_smart.paxees_news_app.CustomViews.CircleImageView
                         android:id="@+id/ivPostedNewsReporterImage"
                         android:layout_width="@dimen/margin_45"
                         android:layout_height="@dimen/margin_45"

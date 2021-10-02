@@ -182,6 +182,7 @@ int attr fontProviderFetchStrategy 0x0
 int attr fontProviderFetchTimeout 0x0
 int attr fontProviderPackage 0x0
 int attr fontProviderQuery 0x0
+int attr fontProviderSystemFontFamily 0x0
 int attr fontStyle 0x0
 int attr fontVariationSettings 0x0
 int attr fontWeight 0x0
@@ -200,6 +201,7 @@ int attr indeterminateProgressStyle 0x0
 int attr initialActivityCount 0x0
 int attr isLightTheme 0x0
 int attr itemPadding 0x0
+int attr lStar 0x0
 int attr lastBaselineToBottomHeight 0x0
 int attr layout 0x0
 int attr lineHeight 0x0
@@ -227,6 +229,7 @@ int attr multiChoiceItemLayout 0x0
 int attr navigationContentDescription 0x0
 int attr navigationIcon 0x0
 int attr navigationMode 0x0
+int attr nestedScrollViewStyle 0x0
 int attr numericModifiers 0x0
 int attr overlapAnchor 0x0
 int attr paddingBottomNoButtons 0x0
@@ -244,6 +247,7 @@ int attr progressBarPadding 0x0
 int attr progressBarStyle 0x0
 int attr queryBackground 0x0
 int attr queryHint 0x0
+int attr queryPatterns 0x0
 int attr radioButtonStyle 0x0
 int attr ratingBarStyle 0x0
 int attr ratingBarStyleIndicator 0x0
@@ -254,6 +258,7 @@ int attr searchViewStyle 0x0
 int attr seekBarStyle 0x0
 int attr selectableItemBackground 0x0
 int attr selectableItemBackgroundBorderless 0x0
+int attr shortcutMatchRequired 0x0
 int attr showAsAction 0x0
 int attr showDividers 0x0
 int attr showText 0x0
@@ -736,6 +741,10 @@ int id icon_group 0x0
 int id image 0x0
 int id info 0x0
 int id italic 0x0
+int id item1 0x0
+int id item2 0x0
+int id item3 0x0
+int id item4 0x0
 int id line1 0x0
 int id line3 0x0
 int id listMode 0x0
@@ -786,10 +795,15 @@ int id tag_accessibility_actions 0x0
 int id tag_accessibility_clickable_spans 0x0
 int id tag_accessibility_heading 0x0
 int id tag_accessibility_pane_title 0x0
+int id tag_on_apply_window_listener 0x0
+int id tag_on_receive_content_listener 0x0
+int id tag_on_receive_content_mime_types 0x0
 int id tag_screen_reader_focusable 0x0
+int id tag_state_description 0x0
 int id tag_transition_group 0x0
 int id tag_unhandled_key_event_manager 0x0
 int id tag_unhandled_key_listeners 0x0
+int id tag_window_insets_animation_callback 0x0
 int id text 0x0
 int id text2 0x0
 int id textSpacerNoButtons 0x0
@@ -802,6 +816,7 @@ int id topPanel 0x0
 int id unchecked 0x0
 int id uniform 0x0
 int id up 0x0
+int id view_tree_lifecycle_owner 0x0
 int id wrap_content 0x0
 int integer abc_config_activityDefaultDur 0x0
 int integer abc_config_activityShortDur 0x0
@@ -857,6 +872,8 @@ int layout select_dialog_multichoice_material 0x0
 int layout select_dialog_singlechoice_material 0x0
 int layout support_simple_spinner_dropdown_item 0x0
 int menu crop_image_menu 0x0
+int menu example_menu 0x0
+int menu example_menu2 0x0
 int string abc_action_bar_home_description 0x0
 int string abc_action_bar_up_description 0x0
 int string abc_action_menu_overflow_description 0x0
@@ -1478,10 +1495,15 @@ int styleable AppCompatTheme_windowMinWidthMinor 123
 int styleable AppCompatTheme_windowNoTitle 124
 int[] styleable ButtonBarLayout { 0x0 }
 int styleable ButtonBarLayout_allowStacking 0
-int[] styleable ColorStateListItem { 0x0, 0x101031f, 0x10101a5 }
+int[] styleable Capability { 0x0, 0x0 }
+int styleable Capability_queryPatterns 0
+int styleable Capability_shortcutMatchRequired 1
+int[] styleable ColorStateListItem { 0x0, 0x101031f, 0x10101a5, 0x0, 0x0 }
 int styleable ColorStateListItem_alpha 0
 int styleable ColorStateListItem_android_alpha 1
 int styleable ColorStateListItem_android_color 2
+int styleable ColorStateListItem_android_lStar 3
+int styleable ColorStateListItem_lStar 4
 int[] styleable CompoundButton { 0x1010107, 0x0, 0x0, 0x0 }
 int styleable CompoundButton_android_button 0
 int styleable CompoundButton_buttonCompat 1
@@ -1526,13 +1548,14 @@ int styleable DrawerArrowToggle_drawableSize 4
 int styleable DrawerArrowToggle_gapBetweenBars 5
 int styleable DrawerArrowToggle_spinBars 6
 int styleable DrawerArrowToggle_thickness 7
-int[] styleable FontFamily { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int[] styleable FontFamily { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable FontFamily_fontProviderAuthority 0
 int styleable FontFamily_fontProviderCerts 1
 int styleable FontFamily_fontProviderFetchStrategy 2
 int styleable FontFamily_fontProviderFetchTimeout 3
 int styleable FontFamily_fontProviderPackage 4
 int styleable FontFamily_fontProviderQuery 5
+int styleable FontFamily_fontProviderSystemFontFamily 6
 int[] styleable FontFamilyFont { 0x1010532, 0x101053f, 0x1010570, 0x1010533, 0x101056f, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable FontFamilyFont_android_font 0
 int styleable FontFamilyFont_android_fontStyle 1

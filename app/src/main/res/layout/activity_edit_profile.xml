@@ -67,7 +67,7 @@
                 android:layout_marginTop="@dimen/margin_20"
                 android:layout_marginBottom="@dimen/margin_5">
 
-                <com.daily_smart.news_app.CustomViews.CircleImageView
+                <com.paxees_daily_smart.paxees_news_app.CustomViews.CircleImageView
                     android:id="@+id/ivEditProfileImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

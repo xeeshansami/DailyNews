@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:280766357619:android:b3635d6ab1e281de914a06",
         "android_client_info": {
-          "package_name": "com.daily_smart.news_app"
+          "package_name": "com.paxees_daily_smart.paxees_news_app"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "280766357619-0nu7usgpklcqnslsbv082qcindh5dgup.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.daily_smart.news_app",
+            "package_name": "com.paxees_daily_smart.paxees_news_app",
             "certificate_hash": "b29cb0ba19e49d2f8c94562bf575e35f07ab3d2d"
           }
         },
@@ -26,7 +26,7 @@
           "client_id": "280766357619-5klu92bf307ucf0apk678lbiubssp6gg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.daily_smart.news_app",
+            "package_name": "com.paxees_daily_smart.paxees_news_app",
             "certificate_hash": "764749bca2f5009f4739522f4a1c4654404a36dd"
           }
         },
@@ -34,7 +34,7 @@
           "client_id": "280766357619-6bi1v5mlnfnviiud48b3qofm8rpo8v37.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.daily_smart.news_app",
+            "package_name": "com.paxees_daily_smart.paxees_news_app",
             "certificate_hash": "e8a87f2d4ce2008182bae4a84f4b7d7161e4936c"
           }
         },
@@ -42,7 +42,7 @@
           "client_id": "280766357619-geqfpue6ha0fbe4mivm2botts2m4g7sv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.daily_smart.news_app",
+            "package_name": "com.paxees_daily_smart.paxees_news_app",
             "certificate_hash": "9d11e6c5157e2cc4e6d9ea5574252260bfb999c7"
           }
         },
